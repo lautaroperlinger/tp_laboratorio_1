@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1599867184 source:c:\users\lauta\onedrive\desktop\codeblock ejercicios\trabajos practicos\trabajo practico 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesTpOne.h"
+	<ctype.h>
+
+1599872559 c:\users\lauta\onedrive\desktop\codeblock ejercicios\trabajos practicos\trabajo practico 1\funcionestpone.h
+
+1599576754 source:c:\users\lauta\onedrive\desktop\codeblock ejercicios\trabajos practicos\trabajo practico 1\funcionestpone.c
+	"funcionesTpOne.h"
+
+1599862928 source:c:\users\lauta\onedrive\desktop\codeblock ejercicios\trabajos practicos\trabajo practico 1\funcionstpone.c
+	"funcionesTpOne.h"
+
