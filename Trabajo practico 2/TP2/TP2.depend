@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1601688290 source:c:\users\lauta\onedrive\desktop\codeblock ejercicios\trabajos practicos\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1601689044 c:\users\lauta\onedrive\desktop\codeblock ejercicios\trabajos practicos\tp2\arrayemployees.h
+
+1601688676 source:c:\users\lauta\onedrive\desktop\codeblock ejercicios\trabajos practicos\tp2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
