@@ -50,7 +50,7 @@ int Multiplicar(int numerouno,int numerodos);
 /// \param numerouno
 /// \param numerodos
 /// \return retorna el total de la division
-int Dividir(int numerouno,int numerodos);
+float Dividir(int numerouno,int numerodos);
 /// \fn int Factorial(int)
 /// \brief realiza el factorial del numero que se ingreso
 ///

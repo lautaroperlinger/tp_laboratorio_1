@@ -24,7 +24,7 @@ int main(void) {
 	int opcion;
 	int flagA;
 	int flagB;
-	int flagOpcion3
+	int flagOpcion3;
 	int I;
 	flagA=0;
 	flagB=0;

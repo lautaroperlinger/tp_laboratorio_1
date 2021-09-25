@@ -34,10 +34,14 @@ int Multiplicar(int numerouno,int numerodos)
 		resultado=numerouno*numerodos;
 		return resultado;
 }
-int Dividir(int numerouno,int numerodos)
+float Dividir(int numerouno,int numerodos)
 {
-	int resultado;
-		resultado=numerouno/numerodos;
+	float resultado;
+	float numero1;
+	float numero2;
+	numero1=(float)numerouno;
+	numero2=(float)numerodos;
+		resultado=numero1/numero2;
 	return resultado;
 
 }
