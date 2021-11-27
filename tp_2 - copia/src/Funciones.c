@@ -8,6 +8,7 @@
 #include "Funciones.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <ctype.h>
 void Menu(int* opcion,char mensaje[],char mensajeError[],int maximo,int minimo)
 {
@@ -83,9 +84,11 @@ int ValidarEntero(int* entero)
 		for(i=0;i<strlen(buffer);i++)
 		{
 			total=total+isdigit(buffer[i]);
+			printf("%d\n",total);
 		}
 		if(total!=0)
 		{
+			puts("erntro al if del total");
 			retorno=1;
 			*entero=atoi(buffer);
 		}
@@ -95,6 +98,7 @@ int ValidarEntero(int* entero)
 void PedirEntero(int* entero,char mensaje[],int minimo,int maximo)
 {
 	int auxiliarEntero;
+	auxiliarEntero=0;
 	do
 	{
 		printf("%s",mensaje);
@@ -102,16 +106,46 @@ void PedirEntero(int* entero,char mensaje[],int minimo,int maximo)
 		{
 			*entero=auxiliarEntero;
 		}
-	}while(auxiliarEntero<minimo||auxiliarEntero>maximo||auxiliarEntero==0);
-	*entero=auxiliarEntero;
+	}while(auxiliarEntero<minimo||auxiliarEntero>=maximo||auxiliarEntero==0);
+}
+float ValidarFlotante(float* flotante)
+{
+	float retorno;
+	int i;
+	int total;
+	total=0;
+	char buffer[4096];
+	scanf("%s",buffer);
+	retorno=0;
+	if(flotante!=NULL)
+	{
+		for(i=0;i<strlen(buffer);i++)
+		{
+			total=total+isdigit(buffer[i]);
+			printf("%d\n",total);
+		}
+		if(total!=0)
+		{
+			retorno=1;
+			*flotante=atoi(buffer);
+		}
+	}
+	printf("el retorno es: %2f\n");
+	return retorno;
 }
 void PedirFlotante(char mensaje[],float* flotante,float tamanioMinimo)
 {
-	float numero;
+	float auxiliarflotante;
+	int flag;
+	flag=0;
 	do
 	{
 		printf("%s",mensaje);
-		scanf("%f",&numero);
-	}while(numero<tamanioMinimo);
-	*flotante=numero;
+		if(ValidarFlotante(&auxiliarflotante)!=0)
+		{
+			*flotante=auxiliarflotante;
+			flag=1;
+		}
+	}while(auxiliarflotante<tamanioMinimo||auxiliarflotante==0||flag==0);
+	*flotante=auxiliarflotante;
 }

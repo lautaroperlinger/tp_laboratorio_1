@@ -53,6 +53,7 @@ int ValidarEntero(int* entero);
 /// \param minimo
 /// \param maximo
 void PedirEntero(int* entero,char mensaje[],int minimo,int maximo);
+float ValidarFlotante(float* flotante);
 /// \fn void PedirFlotante(char[], float*, float)
 /// \brief Pide un flotante al usuario
 ///
