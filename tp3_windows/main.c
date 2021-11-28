@@ -24,11 +24,9 @@ int main()
 {
 	setbuf(stdout,NULL);
 	int opcion;
-	int flagempleado;
 	int flagdatos;
 	LinkedList* listaempleados;
 	listaempleados=ll_newLinkedList();
-	flagempleado=0;
 	flagdatos=0;
 	do
 	{
@@ -37,27 +35,48 @@ int main()
 		switch(opcion)
 		{
 			case 1:
+				//puts("entro aca.\n");
 				if(flagdatos==0)
 				{
+					//puts("entro aca.\n");
 					controller_loadFromText("data.csv", listaempleados);
 					flagdatos=1;
 				}
+				else
+				{
+					puts("No se puede cargar los datos por que ya se cargaron.\n");
+				}
 						break;
 			case 2:
-						break;
-			case 3:
-				if(controller_addEmployee(listaempleados)==1)
+				if(flagdatos==0)
 				{
-					puts("se ingreso el empleado exitosamente.\n");
-					flagempleado=1;
+					controller_loadFromBinary("data.csv", listaempleados);
+					flagdatos=1;
 				}
 				else
 				{
-					puts("no se pudo ingresar el empleado.\n");
+					puts("No se puede cargar los datos por que ya se cargaron.\n");
 				}
 						break;
+			case 3:
+				if(flagdatos==1)
+				{
+					if(controller_addEmployee(listaempleados)==1)
+					{
+						puts("se ingreso el empleado exitosamente.\n");
+					}
+					else
+					{
+						puts("no se pudo ingresar el empleado.\n");
+					}
+							break;
+				}
+				else
+				{
+					puts("Primero se tiene que cargar los empleados.\n");
+				}
 			case 4:
-				if(flagempleado==1)
+				if(flagdatos==1)
 				{
 					controller_ListEmployee(listaempleados);
 					if(controller_editEmployee(listaempleados)==1)
@@ -75,7 +94,7 @@ int main()
 				}
 						break;
 			case 5:
-				if(flagempleado==1)
+				if(flagdatos==1)
 				{
 					controller_ListEmployee(listaempleados);
 					if(controller_removeEmployee(listaempleados)==1)
@@ -93,7 +112,7 @@ int main()
 				}
 						break;
 			case 6:
-				if(flagempleado==1||flagdatos==1)
+				if(flagdatos==1)
 				{
 					controller_ListEmployee(listaempleados);
 				}
@@ -103,7 +122,7 @@ int main()
 				}
 						break;
 			case 7:
-				if(flagempleado==1)
+				if(flagdatos==1)
 				{
 					controller_sortEmployee(listaempleados);
 				}
@@ -113,8 +132,17 @@ int main()
 				}
 						break;
 			case 8:
+				if(flagdatos==1)
+				{
+					controller_saveAsText("data.csv", listaempleados);
+					flagdatos=0;
+				}
 						break;
 			case 9:
+				if(flagdatos==1)
+				{
+					controller_saveAsBinary("data.csv", listaempleados);
+				}
 						break;
 		}
 	}while(opcion!=10);

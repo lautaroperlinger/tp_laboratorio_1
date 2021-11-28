@@ -5,7 +5,7 @@
 Employee* employee_new()
 {
 	Employee* empleado;
-	empleado= (Employee*)malloc(sizeof(empleado));
+	empleado= (Employee*)malloc(sizeof(Employee));
 	return empleado;
 
 }
