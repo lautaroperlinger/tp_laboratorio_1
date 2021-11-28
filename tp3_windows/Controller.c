@@ -45,8 +45,8 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 	FILE* archivo;
 	if(path!=NULL&&pArrayListEmployee!=NULL)
 	{
-		//controller_loadFromText(path, pArrayListEmployee);
-		//controller_saveAsBinary(path, pArrayListEmployee);
+		controller_loadFromText(path, pArrayListEmployee);
+		controller_saveAsBinary(path, pArrayListEmployee);
 		archivo=fopen(path,"rb");
 		parser_EmployeeFromBinary(archivo, pArrayListEmployee);
 		fclose(archivo);
